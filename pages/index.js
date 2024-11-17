@@ -26,7 +26,7 @@ const Index = () => {
 
   return (
     <>
-      {/* <Loader /> */}
+      <Loader />
       {/* <Cursor /> */}
       <Navbar />
       <Home />

@@ -13,7 +13,7 @@ export const projects = [
       "Empowering businesses with Web3 and blockchain solutions. From smart contracts to decentralized apps, we build secure, transparent, and innovative systems for the next generation of the digital economy.",
     src: "2.png",
     link: "https://www.ignant.com/2022/09/30/clement-chapillon-questions-geographical-and-mental-isolation-with-les-rochers-fauves/",
-    color: "#977F6D",
+    color: "#fffff0",
   },
   {
     title: "AI & Automation",
@@ -29,7 +29,7 @@ export const projects = [
       "Designing intuitive and engaging user experiences. Our UI/UX solutions blend creativity and functionality to deliver visually appealing, user-centered designs that elevate your brand and enhance customer satisfaction.",
     src: "7.png",
     link: "https://www.ignant.com/2019/03/13/a-photographic-series-depicting-the-uncertain-future-of-denmarks-treasured-coastlines/",
-    color: "#B62429",
+    color: "#BBACAF",
   },
   {
     title: "No Code Development & Integration",
@@ -37,7 +37,7 @@ export const projects = [
       "Effortlessly build and integrate custom solutions with no-code platforms. We deliver scalable applications, automate workflows, and ensure seamless system integration to accelerate your business growth without extensive coding.",
     src: "10.png",
     link: "https://www.ignant.com/2023/04/12/mark-rammers-all-over-again-is-a-study-of-regret-and-the-willingness-to-move-forward/",
-    color: "#88A28D",
+    color: "#fffff0",
   },
   {
     title: "Ecommerce Development & Consultation",
@@ -45,6 +45,6 @@ export const projects = [
       "Create powerful e-commerce platforms with our development expertise and strategic consultation. We deliver custom online stores, optimize operations, and enhance user experiences to drive sales, customer retention, and business growth",
     src: "20.png",
     link: "https://www.ignant.com/2023/04/12/mark-rammers-all-over-again-is-a-study-of-regret-and-the-willingness-to-move-forward/",
-    color: "#88A28D",
+    color: "#C2491D",
   },
 ];
