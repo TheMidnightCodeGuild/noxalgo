@@ -1,14 +1,13 @@
 import { projects } from "../../utils/data";
-import dynamic from 'next/dynamic'
-
-// Create a dynamic import for Card with SSR disabled
-const Card = dynamic(() => import('./Card'), { ssr: false })
-
 import { useScroll } from "framer-motion";
 import { useEffect, useRef } from "react";
 import Lenis from "@studio-freight/lenis";
+import dynamic from 'next/dynamic';
 
-export default function Home() {
+// Create a dynamic import for Card with SSR disabled
+const Card = dynamic(() => import('./Card'), { ssr: false });
+
+export default function Cards() {
   const container = useRef(null);
   const { scrollYProgress } = useScroll({
     target: container,
@@ -24,7 +23,12 @@ export default function Home() {
     }
 
     requestAnimationFrame(raf);
-  });
+    
+    // Cleanup function
+    return () => {
+      lenis.destroy();
+    };
+  }, []); // Add empty dependency array
 
   return (
     <main ref={container} className="relative mt-[10vh] md:mt-[15vh]">
