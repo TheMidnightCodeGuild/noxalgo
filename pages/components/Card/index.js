@@ -1,7 +1,7 @@
 "use client";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { useTransform, motion, useScroll } from "framer-motion";
-import { useRef } from "react";
 
 const Card = ({
   i,
@@ -15,13 +15,24 @@ const Card = ({
   targetScale,
 }) => {
   const container = useRef(null);
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   const { scrollYProgress } = useScroll({
     target: container,
     offset: ["start end", "start start"],
   });
 
-  const imageScale = useTransform(scrollYProgress, [0, 1], [2, 1]);
-  const scale = useTransform(progress, range, [1, targetScale]);
+  // Only calculate transforms if component is mounted
+  const imageScale = isMounted ? useTransform(scrollYProgress, [0, 1], [2, 1]) : 1;
+  const scale = isMounted && progress && range ? useTransform(progress, range, [1, targetScale]) : 1;
+
+  if (!isMounted) {
+    return null; // or a loading state
+  }
 
   return (
     <div
@@ -46,6 +57,7 @@ const Card = ({
               <a
                 href={url}
                 target="_blank"
+                rel="noopener noreferrer"
                 className="text-[10px] sm:text-xs underline cursor-pointer">
                 See more
               </a>
@@ -69,8 +81,9 @@ const Card = ({
               <Image
                 fill
                 src={`/images/${src}`}
-                alt="image"
-                className="object-cover "
+                alt={title || "Project image"}
+                className="object-cover"
+                priority
               />
             </motion.div>
           </div>
