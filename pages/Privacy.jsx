@@ -39,7 +39,7 @@ const Privacy = () => {
           <div className="mb-12 text-center">
             <p className="text-gray-400">Last Updated: November 17, 2024</p>
             <p className="mt-4 text-lg text-gray-300">
-              Welcome to NOXALGO LLP's Privacy Policy. This policy outlines how
+              Welcome to NOXALGO LLP&apos;s Privacy Policy. This policy outlines how
               we collect, use, disclose, and safeguard your information.
             </p>
           </div>

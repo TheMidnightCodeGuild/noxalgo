@@ -83,8 +83,8 @@ const Aboutus = () => {
               <p className="text-gray-300 text-justify leading-relaxed tracking-tight">
                 To deliver innovative and scalable software solutions that drive
                 growth and profitability for our clients. We are committed to
-                understanding our clients' unique needs and delivering tailored
-                solutions that exceed expectations. Through continuous
+                understanding our clients&apos; unique needs and delivering
+                tailored solutions that exceed expectations. Through continuous
                 innovation, we aim to be the trusted technology partner.
               </p>
             </div>
@@ -131,7 +131,7 @@ const Aboutus = () => {
                 startups and leading companies, NOXALGO LLP was born.
               </p>
               <p className="text-base sm:text-lg text-gray-300 leading-relaxed">
-                Today, we're a unified team focused on helping businesses grow
+                Today, we&apos;re a unified team focused on helping businesses grow
                 and maximize their potential through innovative digital
                 solutions. Our journey of transformation continues as we strive
                 to set new standards in software development and digital

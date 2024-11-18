@@ -10,7 +10,7 @@ const Blog3 = () => {
         </h1>
 
         <p className="text-gray-300 mb-8">
-          In today's digital-first world, having a strong online presence is
+          In today&apos;s digital-first world, having a strong online presence is
           essential for businesses across industries, including software
           development companies and multinational corporations (MNCs). As the
           competition in the tech sector intensifies, digital marketing has
@@ -21,7 +21,7 @@ const Blog3 = () => {
         <p className="text-gray-300 mb-8">
           At NOXALGO LLP, we understand the power of digital marketing and its
           critical role in shaping the success of software development companies
-          and MNCs. In this blog, we'll explore why digital marketing is a
+          and MNCs. In this blog, we&apos;ll explore why digital marketing is a
           game-changer and how NOXALGO LLP can help your business harness its
           full potential.
         </p>
@@ -47,7 +47,7 @@ const Blog3 = () => {
               </li>
               <li className="mb-2">
                 How NOXALGO Helps: We craft tailored campaigns to amplify your
-                brand's voice across digital platforms.
+                brand&apos;s voice across digital platforms.
               </li>
             </ul>
           </div>
@@ -136,7 +136,7 @@ const Blog3 = () => {
               </h3>
               <p className="text-gray-300">
                 We believe in transparency. Regular reports and updates ensure
-                you're always in the loop about your campaign's performance.
+                you&apos;re always in the loop about your campaign&apos;s performance.
               </p>
             </div>
           </div>
@@ -148,7 +148,7 @@ const Blog3 = () => {
           </h2>
           <p className="text-gray-300">
             Ready to transform your digital presence? Contact NOXALGO LLP today,
-            and let's create a digital marketing strategy that drives real
+            and let&apos;s create a digital marketing strategy that drives real
             results!
           </p>
           <div className="mt-4">

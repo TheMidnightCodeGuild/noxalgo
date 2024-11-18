@@ -19,7 +19,7 @@ const Blog2 = () => {
         </p>
 
         <p className="text-gray-300 mb-8">
-          In this blog, we'll explore what Web 3.0 and blockchain mean, their
+          In this blog, we&apos;ll explore what Web 3.0 and blockchain mean, their
           significance for businesses, and how NOXALGO LLP can help you harness
           their potential to stay ahead in the digital age.
         </p>
@@ -32,8 +32,8 @@ const Blog2 = () => {
           What is Web 3.0?
         </h3>
         <p className="text-gray-300 mb-6">
-          Web 3.0, often referred to as the "semantic web," represents the next
-          generation of the internet. Unlike Web 2.0, where centralized
+          Web 3.0, often referred to as the &quot;semantic web,&quot; represents
+          the next generation of the internet. Unlike Web 2.0, where centralized
           platforms dominate, Web 3.0 emphasizes decentralization and
           peer-to-peer interactions, enabling users to own and control their
           data.
@@ -132,7 +132,7 @@ const Blog2 = () => {
           </h2>
           <p className="text-gray-300">
             Ready to embrace the future with Web 3.0 and blockchain? Contact
-            NOXALGO LLP today, and let's build something extraordinary together!
+            NOXALGO LLP today, and let&apos;s build something extraordinary together!
           </p>
           <div className="mt-4">
             <p className="text-gray-400 italic">

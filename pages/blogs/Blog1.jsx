@@ -17,7 +17,7 @@ const Blog1 = () => {
           years, adapting to changing user needs, emerging technologies, and
           global trends. At NOXALGO LLP, we believe that staying ahead in this
           dynamic landscape is not just about adopting the latest
-          technologies—it's about pioneering solutions that redefine what's
+          technologies—it&apos;s about pioneering solutions that redefine what&apos;s
           possible.
         </p>
 
@@ -96,7 +96,7 @@ const Blog1 = () => {
         </h2>
         <p className="text-gray-300 mb-8">
           Choosing NOXALGO LLP means partnering with a company that prioritizes
-          innovation, excellence, and your business's success. Our expertise in
+          innovation, excellence, and your business&apos;s success. Our expertise in
           cutting-edge web development ensures your online presence remains
           competitive and impactful.
         </p>

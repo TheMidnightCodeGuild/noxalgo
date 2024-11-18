@@ -56,7 +56,7 @@ const Web3 = () => {
               Ready to Enter the Web3 Space?
             </h2>
             <p className="text-lg mb-6">
-              Let's create your success story together
+              Let&apos;s create your success story together
             </p>
             <button className="bg-white text-purple-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors duration-300">
               Get Started

@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -7,7 +8,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto text-xs sm:text-sm text-neutral-500 flex flex-col sm:flex-row justify-between items-start md:px-4 lg:px-8">
         <div className="w-full sm:w-auto mb-8 sm:mb-0">
           <div className="flex justify-center sm:justify-start mb-4">
-            <a
+            <Link
               className="font-normal flex space-x-2 items-center text-sm text-black px-2 py-1 relative z-20"
               href="/">
               <Image
@@ -17,7 +18,7 @@ const Footer = () => {
                 height={60}
                 className="object-contain sm:mx-4 md:mx-8 lg:mx-12"
               />
-            </a>
+            </Link>
           </div>
           <div className="text-center sm:text-left mt-2">
             <p className="text-xs sm:text-sm">
