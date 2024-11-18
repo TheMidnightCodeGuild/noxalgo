@@ -1,4 +1,4 @@
-const blogs = [
+export default blogs = [
   {
     id: 1,
     image: "/blogimages/blog1.jpg",
@@ -24,5 +24,3 @@ const blogs = [
     link: "/blogs/Blog3",
   },
 ];
-
-export default blogs;
