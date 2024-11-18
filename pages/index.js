@@ -28,7 +28,10 @@ const Index = () => {
       <Banner2 />
       <Cards />
       <Othersec />
-      <Text1 />
+      <div className="hidden md:block">
+        <Text1 />
+      </div>
+
       <Footer />
     </>
   );
