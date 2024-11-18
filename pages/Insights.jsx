@@ -3,8 +3,7 @@ import Blogcard from "./components/Blogcard";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Image from "next/image";
-import { blogs } from "./components/Blogs/blogs";
-
+import blogs from "./components/Blogs/blogs";
 export default function Insights() {
   return (
     <>
