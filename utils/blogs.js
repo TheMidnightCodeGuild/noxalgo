@@ -1,4 +1,4 @@
-const blogs = [
+export const blogs = [
   {
     id: 1,
     image: "/blogimages/blog1.jpg",
