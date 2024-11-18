@@ -1,5 +1,9 @@
 import { projects } from "../../utils/data";
-import Card from "../components/Card";
+import dynamic from 'next/dynamic'
+
+// Create a dynamic import for Card with SSR disabled
+const Card = dynamic(() => import('./Card'), { ssr: false })
+
 import { useScroll } from "framer-motion";
 import { useEffect, useRef } from "react";
 import Lenis from "@studio-freight/lenis";
