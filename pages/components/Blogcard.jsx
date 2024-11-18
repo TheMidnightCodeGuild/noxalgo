@@ -4,6 +4,15 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function Blogcard({ image, heading, blog, link }) {
+  // Add prop validation
+  if (!image || !heading || !link) {
+    return (
+      <div className="text-white">
+        Missing required props for Blogcard component
+      </div>
+    );
+  }
+
   // Limit blog text to 30 words
   const limitWords = (text, limit) => {
     if (!text) return '';
