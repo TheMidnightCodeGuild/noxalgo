@@ -21,9 +21,9 @@ export default function Insights() {
           />
         </div>
         <div className="relative z-10 h-full flex items-center">
-          <div className="max-w-5xl mx-auto px-4">
-            <div className="text-left">
-              <h1 className="text-4xl md:text-4xl font-semibold text-white leading-tight">
+          <div className="max-w-5xl px-4">
+            <div className="text-left mx-20">
+              <h1 className="text-4xl md:text-4xl font-semibold text-white leading-tight text-left">
                 Stay Up-to-Date with Our Latest Insights and Expertise.
               </h1>
               <p className="text-gray-400 mt-4 text-lg">

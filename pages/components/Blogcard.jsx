@@ -15,12 +15,12 @@ export default function Blogcard({ image, heading, blog, link }) {
 
   return (
     <div>
-      <BackgroundGradient className="rounded-[22px] p-4 bg-zinc-900">
+      <BackgroundGradient className="rounded-[22px] px-6 py-2 mx-3 bg-zinc-900 border border-[#fffff0]">
         <Image
           src={image}
           alt={heading}
-          height="400"
-          width="400"
+          height={400}
+          width={400}
           className="object-cover w-full h-[250px] rounded-lg"
         />
         <h1 className="text-base sm:text-xl text-white mt-4 mb-2 font-semibold line-clamp-2">

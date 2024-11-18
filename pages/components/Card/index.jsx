@@ -64,13 +64,13 @@ const Card = ({
             </span>
           </div>
 
-          <div className="relative w-full md:w-[70%] h-[200px] md:h-full rounded-[25px] overflow-hidden">
+          <div className="relative w-full md:w-[80%] h-[200px] md:h-full rounded-[25px] overflow-hidden">
             <motion.div className="w-full h-full" style={{ scale: imageScale }}>
               <Image
                 fill
                 src={`/images/${src}`}
                 alt="image"
-                className="object-cover"
+                className="object-cover "
               />
             </motion.div>
           </div>

@@ -78,11 +78,7 @@ const Footer = () => {
               Legal
             </p>
             <ul className="space-y-2 sm:space-y-4 text-neutral-300">
-              {[
-                ["Privacy Policy", "/privacy-policy"],
-                ["Terms of Service", "/terms-of-service"],
-                ["Cookie Policy", "/cookie-policy"],
-              ].map(([text, href]) => (
+              {[["Privacy Policy", "/Privacy"]].map(([text, href]) => (
                 <li key={href}>
                   <a
                     className="hover:text-neutral-100 transition-colors text-xs sm:text-sm"

@@ -45,7 +45,7 @@ const Why = () => {
               className="text-2xl md:text-3xl font-bold text-white mb-4">
               Why Noxalgo?
             </h2>
-            <p className="text-neutral-400 text-sm mb-6 text-justify">
+            <p className="text-neutral-400 text-base mb-6 text-justify">
               We believe in integrity, innovation, constant improvement,
               commitment to customers, teamwork and trust. We provide high-level
               planning and infrastructure consulting through technology
@@ -86,14 +86,14 @@ const Why = () => {
                     alt="Expert Team"
                     width={150}
                     height={75}
-                    className="w-[150px] h-[75px] object-contain"
+                    className="w-[150px] h-[95px] object-contain"
                   />
                 </div>
                 <div>
                   <h3 className="text-base md:text-lg font-semibold text-white mb-1.5 text-center md:text-left">
                     Expert Team
                   </h3>
-                  <p className="text-neutral-400 text-xs text-center md:text-left">
+                  <p className="text-neutral-400 text-sm text-center md:text-left">
                     At Noxalgo, we believe in quality, so we have a more
                     comprehensive, versatile, and skilled team that will go
                     above and beyond to meet the needs of our clients.
@@ -113,14 +113,14 @@ const Why = () => {
                     alt="Committed to Delivery"
                     width={150}
                     height={75}
-                    className="w-[150px] h-[75px] object-contain"
+                    className="w-[150px] h-[95px] object-contain"
                   />
                 </div>
                 <div>
                   <h3 className="text-base md:text-lg font-semibold text-white mb-1.5 text-center md:text-left">
                     Committed to Delivery
                   </h3>
-                  <p className="text-neutral-400 text-xs text-center md:text-left">
+                  <p className="text-neutral-400 text-sm text-center md:text-left">
                     Our commitment to timely delivery ensures your projects stay
                     on track. We maintain transparent communication and meet
                     deadlines consistently.
@@ -140,18 +140,16 @@ const Why = () => {
                     alt="Agile Development Process"
                     width={150}
                     height={75}
-                    className="w-[150px] h-[80px] object-contain text-white"
+                    className="w-[150px] h-[85px] object-contain text-white"
                   />
                 </div>
                 <div>
                   <h3 className="text-base md:text-lg font-semibold text-white mb-1.5 text-center md:text-left">
                     Agile Development Process
                   </h3>
-                  <p className="text-neutral-400 text-xs text-center md:text-left">
+                  <p className="text-neutral-400 text-sm text-center md:text-left">
                     Our agile development process allows us to adapt to your
                     changing needs and deliver high-quality solutions quickly.
-                    We prioritize flexibility and continuous improvement
-                    throughout the development lifecycle.
                   </p>
                 </div>
               </div>

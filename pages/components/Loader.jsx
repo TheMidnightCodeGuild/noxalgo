@@ -9,7 +9,10 @@ const words = [
   "Ciao",
   "Guten tag",
   "Hallo",
+  "こんにちは",
   "नमस्ते",
+  "Olá",
+  "नमस्कार",
   "Welcome to NoxAlgo",
 ];
 

@@ -5,32 +5,38 @@ import Image from "next/image";
 
 const Aboutus = () => {
   return (
-    <div className="min-h-screen bg-[#0a0a0a] text-white">
+    <div className="min-h-screen bg-black text-white">
       <Navbar />
 
       {/* Hero Banner */}
-      <div className="relative h-[60vh] sm:h-[70vh] md:h-[80vh] lg:h-[80vh] w-full overflow-hidden border-b-2 border-[#fffff0]">
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-transparent z-10" />
-        <Image
-          src="/images/aboutbanner1.jpg"
-          alt="About Us Banner"
-          fill
-          priority
-          className="object-cover scale-105 animate-slow-zoom"
-        />
-        <div className="absolute inset-0 flex flex-col justify-center items-start text-left px-4 sm:px-8 md:px-20 z-20">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-4 sm:mb-8 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent animate-fade-in">
-            About Us
-          </h1>
-          <p className="text-base sm:text-lg md:text-xl max-w-xl text-gray-200 leading-relaxed animate-slide-up">
-            Transforming ideas into digital reality through innovation and
-            excellence
-          </p>
+      <div className="relative h-[50vh] bg-black">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/images/aboutbanner1.jpg"
+            alt="Banner background"
+            fill
+            className="object-cover opacity-50"
+            priority
+          />
+        </div>
+        <div className="relative z-10 h-full flex items-center">
+          <div className="max-w-5xl px-4">
+            <div className="text-left mx-20">
+              <h1 className="text-4xl md:text-5xl font-semibold text-white leading-tight text-left">
+                About Us
+              </h1>
+              <p className="text-gray-400 mt-4 text-lg">
+                We are a team of passionate individuals who are dedicated to
+                creating innovative solutions that drive growth and
+                profitability for our clients.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
 
       {/* Mission Vision Values Section */}
-      <section className="py-36 mt-10 bg-black relative ">
+      <section className="py-36 pt-16  bg-black relative ">
         <div className="lg:max-w-[1300px] mx-auto px-4 ">
           <div className="w-[150px] h-[3px] bg-[#fffff0] mb-5"></div>
           <h2 className="text-5xl uppercase font-semibold text-left mb-16 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
@@ -109,36 +115,40 @@ const Aboutus = () => {
         </div>
       </section>
 
-      <main className="container mx-auto px-4 py-12 sm:py-16 md:py-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-          <div className="p-4">
-            <h2 className="text-xl sm:text-2xl font-semibold mb-4">
-              Our Story
-            </h2>
-            <p className="text-sm sm:text-base text-gray-300 mb-6">
-              Starting as a group of passionate freelancers across different
-              cities, we united with a shared vision to create something
-              extraordinary. Through our experience working with major startups
-              and leading companies, NOXALGO LLP was born.
-            </p>
-            <p className="text-sm sm:text-base text-gray-300 text-justify">
-              Today, we're a unified team focused on helping businesses grow and
-              maximize their potential through innovative digital solutions. Our
-              journey of transformation continues as we strive to set new
-              standards in software development and digital excellence.
-            </p>
-          </div>
-
-          <div className="relative h-[500px] md:h-[400px]">
-            <Image
-              src="/images/about.png"
-              alt="Our Story Image"
-              fill
-              className="object-cover w-full h-full"
-            />
+      {/* Our Story Section */}
+      <section className="pb-24 bg-black relative">
+        <div className="lg:max-w-[1300px] mx-auto px-4">
+          <div className="w-[150px] h-[3px] bg-[#fffff0] mb-5"></div>
+          <h2 className="text-5xl uppercase font-semibold text-left bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
+            Our Story
+          </h2>
+          <div className="flex flex-col lg:flex-row items-center gap-10">
+            <div className="lg:w-1/2 space-y-6">
+              <p className="text-base sm:text-lg text-gray-300 leading-relaxed">
+                Starting as a group of passionate freelancers across different
+                cities, we united with a shared vision to create something
+                extraordinary. Through our experience working with major
+                startups and leading companies, NOXALGO LLP was born.
+              </p>
+              <p className="text-base sm:text-lg text-gray-300 leading-relaxed">
+                Today, we're a unified team focused on helping businesses grow
+                and maximize their potential through innovative digital
+                solutions. Our journey of transformation continues as we strive
+                to set new standards in software development and digital
+                excellence.
+              </p>
+            </div>
+            <div className="lg:w-1/2 relative h-[500px] rounded-2xl overflow-hidden shadow-2xl">
+              <Image
+                src="/images/about.png"
+                alt="Our Story Image"
+                fill
+                className="object-cover"
+              />
+            </div>
           </div>
         </div>
-      </main>
+      </section>
 
       <Footer />
     </div>

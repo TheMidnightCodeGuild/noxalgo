@@ -168,7 +168,7 @@ const Navbar = () => {
                           Our Services
                         </h3>
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                          <Link href="/web" className="group">
+                          <Link href="/services/Web" className="group">
                             <div className="p-4 rounded-lg hover:bg-[#36454F]/30 transition-all duration-300">
                               <h4 className="text-gray-100 font-medium mb-2">
                                 Web Development
@@ -178,7 +178,7 @@ const Navbar = () => {
                               </p>
                             </div>
                           </Link>
-                          <Link href="/ecommerce" className="group">
+                          <Link href="/services/Ecommerce" className="group">
                             <div className="p-4 rounded-lg hover:bg-[#36454F]/30 transition-all duration-300">
                               <h4 className="text-gray-100 font-medium mb-2">
                                 Ecommerce Development
@@ -188,43 +188,43 @@ const Navbar = () => {
                               </p>
                             </div>
                           </Link>
-                          <Link href="/cloud" className="group">
+                          <Link href="/services/Ai" className="group">
                             <div className="p-4 rounded-lg hover:bg-[#36454F]/30 transition-all duration-300">
                               <h4 className="text-gray-100 font-medium mb-2">
-                                API Development
-                              </h4>
-                              <p className="text-sm text-gray-400">
-                                RESTful and GraphQL API solutions
-                              </p>
-                            </div>
-                          </Link>
-                          <Link href="/ai" className="group">
-                            <div className="p-4 rounded-lg hover:bg-[#36454F]/30 transition-all duration-300">
-                              <h4 className="text-gray-100 font-medium mb-2">
-                                Technology Integration
+                                AI & Automation
                               </h4>
                               <p className="text-sm text-gray-400">
                                 AI, ML and emerging tech integration
                               </p>
                             </div>
                           </Link>
-                          <Link href="/devops" className="group">
+                          <Link href="/services/Ui" className="group">
                             <div className="p-4 rounded-lg hover:bg-[#36454F]/30 transition-all duration-300">
                               <h4 className="text-gray-100 font-medium mb-2">
-                                Backend Development
+                                UI/UX Design
                               </h4>
                               <p className="text-sm text-gray-400">
-                                Robust server-side solutions
+                                User-centric design solutions
                               </p>
                             </div>
                           </Link>
-                          <Link href="/dashboard" className="group">
+                          <Link href="/services/Nocode" className="group">
                             <div className="p-4 rounded-lg hover:bg-[#36454F]/30 transition-all duration-300">
                               <h4 className="text-gray-100 font-medium mb-2">
-                                Dashboard & Portal Development
+                                No Code Development & Integration
                               </h4>
                               <p className="text-sm text-gray-400">
-                                Interactive admin panels and user portals
+                                No-code solutions for rapid development
+                              </p>
+                            </div>
+                          </Link>
+                          <Link href="/services/Web3" className="group">
+                            <div className="p-4 rounded-lg hover:bg-[#36454F]/30 transition-all duration-300">
+                              <h4 className="text-gray-100 font-medium mb-2">
+                                Web 3.0 & Blockchain Development
+                              </h4>
+                              <p className="text-sm text-gray-400">
+                                Web 3.0 and blockchain solutions
                               </p>
                             </div>
                           </Link>
@@ -241,11 +241,11 @@ const Navbar = () => {
                 className="text-[#FFFFF0] flex items-center text-[14px] xl:text-[14px] hover:text-red-200 relative after:absolute after:bottom-[-15px] after:left-0 after:h-[4px] after:w-0 after:bg-[#FFFFF0] after:transition-all after:duration-300 hover:after:w-full">
                 About Us
               </Link>
-              <Link
+              {/* <Link
                 href="/Careers"
                 className="text-[#FFFFF0] flex items-center text-[14px] xl:text-[14px] hover:text-red-200 relative after:absolute after:bottom-[-15px] after:left-0 after:h-[4px] after:w-0 after:bg-[#FFFFF0] after:transition-all after:duration-300 hover:after:w-full">
                 Careers
-              </Link>
+              </Link> */}
               <Link
                 href="/Insights"
                 className="text-[#FFFFF0] flex items-center text-[14px] xl:text-[14px] hover:text-red-200 relative after:absolute after:bottom-[-15px] after:left-0 after:h-[4px] after:w-0 after:bg-[#FFFFF0] after:transition-all after:duration-300 hover:after:w-full">
