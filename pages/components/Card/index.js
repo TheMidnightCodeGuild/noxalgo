@@ -26,12 +26,20 @@ const Card = ({
     offset: ["start end", "start start"],
   });
 
-  // Only calculate transforms if component is mounted
-  const imageScale = isMounted ? useTransform(scrollYProgress, [0, 1], [2, 1]) : 1;
-  const scale = isMounted && progress && range ? useTransform(progress, range, [1, targetScale]) : 1;
+  // Always call hooks
+  const imageScale = useTransform(scrollYProgress, [0, 1], [2, 1]);
+  const scale = useTransform(
+    progress || scrollYProgress, // fallback to scrollYProgress if progress is undefined
+    range || [0, 1], // fallback to default range if not provided
+    [1, targetScale || 1] // fallback to 1 if targetScale is not provided
+  );
+
+  // Use the values only after mounting
+  const currentImageScale = isMounted ? imageScale : 1;
+  const currentScale = isMounted ? scale : 1;
 
   if (!isMounted) {
-    return null; // or a loading state
+    return null;
   }
 
   return (
@@ -42,7 +50,7 @@ const Card = ({
         className="flex flex-col relative -top-1/4 h-[300px] sm:h-[400px] md:h-[500px] w-[90%] sm:w-[85%] md:w-[90%] lg:w-[1000px] rounded-[25px] p-4 sm:p-6 md:p-[50px] origin-top"
         style={{
           backgroundColor: color,
-          scale,
+          scale: currentScale,
           top: `calc(-5vh + ${i * 25}px)`,
         }}>
         <h2 className="text-center m-0 text-lg sm:text-2xl md:text-[28px]">
@@ -77,7 +85,7 @@ const Card = ({
           </div>
 
           <div className="relative w-full md:w-[80%] h-[200px] md:h-full rounded-[25px] overflow-hidden">
-            <motion.div className="w-full h-full" style={{ scale: imageScale }}>
+            <motion.div className="w-full h-full" style={{ scale: currentImageScale }}>
               <Image
                 fill
                 src={`/images/${src}`}
