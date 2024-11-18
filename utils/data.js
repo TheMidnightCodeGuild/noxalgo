@@ -48,3 +48,5 @@ export const projects = [
     color: "#C2491D",
   },
 ];
+
+export default projects;

@@ -2,7 +2,7 @@ import { cn } from "@/lib/utils";
 import React from "react";
 import { motion } from "framer-motion";
 
-export const BackgroundGradient = ({
+const BackgroundGradient = ({
   children,
   className,
   containerClassName,
@@ -17,7 +17,7 @@ export const BackgroundGradient = ({
     },
   };
   return (
-    <div className={cn("relative p-[4px] group ", containerClassName)}>
+    <div className={cn("relative p-[4px] group", containerClassName)}>
       <motion.div
         variants={animate ? variants : undefined}
         initial={animate ? "initial" : undefined}
@@ -34,7 +34,9 @@ export const BackgroundGradient = ({
         style={{
           backgroundSize: animate ? "400% 400%" : undefined,
         }}
-        className={cn()}
+        className={cn(
+          "absolute inset-0 rounded-lg bg-gradient-to-r from-violet-500 via-purple-500 to-blue-500 opacity-100 blur-xl transition duration-1000 group-hover:opacity-70"
+        )}
       />
       <motion.div
         variants={animate ? variants : undefined}
@@ -52,9 +54,13 @@ export const BackgroundGradient = ({
         style={{
           backgroundSize: animate ? "400% 400%" : undefined,
         }}
-        className={cn()}
+        className={cn(
+          "absolute inset-0 rounded-lg bg-gradient-to-r from-violet-500 via-purple-500 to-blue-500 opacity-100 transition duration-1000 group-hover:opacity-70"
+        )}
       />
       <div className={cn("relative z-10", className)}>{children}</div>
     </div>
   );
 };
+
+export default BackgroundGradient;

@@ -24,3 +24,5 @@ export const blogs = [
     link: "/blogs/Blog3",
   },
 ];
+
+export default blogs;
