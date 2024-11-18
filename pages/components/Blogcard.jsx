@@ -6,9 +6,10 @@ import Link from "next/link";
 export default function Blogcard({ image, heading, blog, link }) {
   // Limit blog text to 30 words
   const limitWords = (text, limit) => {
-    const words = text.split(" ");
+    if (!text) return '';
+    const words = text.split(/\s+/);
     if (words.length > limit) {
-      return words.slice(0, limit).join(" ") + "...";
+      return words.slice(0, limit).join(' ') + '...';
     }
     return text;
   };
