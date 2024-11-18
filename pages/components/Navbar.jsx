@@ -305,7 +305,7 @@ const Navbar = () => {
             <div className="relative">
               <button
                 onClick={toggleMobileServices}
-                className="w-full flex justify-between items-center py-2 text-gray-100 hover:text-blue-600">
+                className="w-full flex justify-between items-center py-2 text-gray-100 hover:text-red-200">
                 Our Services
                 <svg
                   className={`w-4 h-4 ml-1 transition-transform duration-200 ${
@@ -327,65 +327,55 @@ const Navbar = () => {
                   showMobileServices ? "block" : "hidden"
                 }`}>
                 <Link
-                  href="/web"
-                  className="block py-2 text-gray-100 hover:text-blue-600">
+                  href="/services/Web"
+                  className="block py-2 text-gray-100 hover:text-red-200">
                   Web Development
                 </Link>
                 <Link
-                  href="/ecommerce"
-                  className="block py-2 text-gray-100 hover:text-blue-600">
+                  href="/services/Ecommerce"
+                  className="block py-2 text-gray-100 hover:text-red-200">
                   Ecommerce Development
                 </Link>
                 <Link
-                  href="/cloud"
-                  className="block py-2 text-gray-100 hover:text-blue-600">
-                  API Development
+                  href="/services/Ai"
+                  className="block py-2 text-gray-100 hover:text-red-200">
+                  AI & Automation
                 </Link>
                 <Link
-                  href="/ai"
-                  className="block py-2 text-gray-100 hover:text-blue-600">
-                  Technology Integration
+                  href="/services/Ui"
+                  className="block py-2 text-gray-100 hover:text-red-200">
+                  UI/UX Design
                 </Link>
                 <Link
-                  href="/devops"
-                  className="block py-2 text-gray-100 hover:text-blue-600">
-                  Backend Development
+                  href="/services/Nocode"
+                  className="block py-2 text-gray-100 hover:text-red-200">
+                  No Code Development
                 </Link>
                 <Link
-                  href="/dashboard"
-                  className="block py-2 text-gray-100 hover:text-blue-600">
-                  Dashboard & Portal Development
+                  href="/services/Web3"
+                  className="block py-2 text-gray-100 hover:text-red-200">
+                  Web 3.0 & Blockchain
                 </Link>
               </div>
             </div>
 
             {/* Mobile Navigation Links */}
             <Link
-              href="/about"
-              className="block py-2 text-gray-100 hover:text-blue-600">
+              href="/Aboutus"
+              className="block py-2 text-gray-100 hover:text-red-200">
               About Us
             </Link>
             <Link
-              href="/Careers"
-              className="block py-2 text-gray-100 hover:text-blue-600">
-              Careers
-            </Link>
-            <Link
-              href="/blogs"
-              className="block py-2 text-gray-100 hover:text-blue-600">
+              href="/Insights"
+              className="block py-2 text-gray-100 hover:text-red-200">
               Insights
-            </Link>
-            <Link
-              href="/customers"
-              className="block py-2 text-gray-100 hover:text-blue-600">
-              Customers
             </Link>
 
             {/* Mobile CTA Button */}
             <div className="pt-4">
               <Link
                 href="/Contact"
-                className="block w-full text-center bg-blue-600 text-white rounded-full px-4 py-2 hover:bg-blue-700">
+                className="block w-full text-center bg-[#FFFFF0] text-black rounded-full px-4 py-2 hover:bg-black hover:text-white">
                 Contact Us
               </Link>
             </div>
