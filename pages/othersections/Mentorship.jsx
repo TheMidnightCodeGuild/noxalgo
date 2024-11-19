@@ -92,7 +92,7 @@ const Mentorship = () => {
           </div>
           <div className="bg-neutral-900 p-8 rounded-xl border border-neutral-800">
             <h3 className="text-xl font-bold mb-4 text-[#fffff0]">
-              Entrepreneur's Program
+              Entrepreneur&apos;s Program
             </h3>
             <p className="text-gray-300">
               Transform your ideas into scalable businesses with guidance on
@@ -108,9 +108,9 @@ const Mentorship = () => {
           </h2>
           <div className="space-y-6">
             <blockquote className="text-gray-300 italic">
-              "NOXALGO's mentorship program transformed my coding hobby into a
-              full-fledged career. I'm now working as a full-stack developer at
-              a leading tech company."
+              &quot;NOXALGO&apos;s mentorship program transformed my coding
+              hobby into a full-fledged career. I&apos;m now working as a
+              full-stack developer at a leading tech company.&quot;
               <footer className="text-[#fffff0] mt-2">
                 — Richa K., Full-Stack Developer
               </footer>
@@ -124,7 +124,7 @@ const Mentorship = () => {
             Ready to Unlock Your Potential?
           </h2>
           <p className="text-gray-300 mb-8">
-            Join NOXALGO LLP's mentorship programs and take the first step
+            Join NOXALGO LLP&apos;s mentorship programs and take the first step
             towards achieving your tech career goals.
           </p>
           <button className="bg-[#fffff0] text-black px-8 py-3 rounded-lg font-bold hover:bg-gray-200 transition duration-300">

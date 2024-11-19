@@ -96,7 +96,7 @@ const Hackathon = () => {
             Ready to Hack the Future?
           </h2>
           <p className="text-gray-300 mb-8">
-            Join NOXALGO's next hackathon and be part of the innovation
+            Join NOXALGO&apos;s next hackathon and be part of the innovation
             revolution.
           </p>
           <button className="bg-[#fffff0] text-black px-8 py-3 rounded-lg font-bold hover:bg-gray-200 transition duration-300">

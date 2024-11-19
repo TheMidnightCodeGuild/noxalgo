@@ -114,9 +114,9 @@ const Test = () => {
           </h2>
           <div className="space-y-6">
             <blockquote className="text-gray-300 italic">
-              "The NoxAlgo Test was my gateway to landing a role at a leading
-              tech firm. The practical challenges truly helped showcase my
-              abilities."
+              &quot;The NoxAlgo Test was my gateway to landing a role at a
+              leading tech firm. The practical challenges truly helped showcase
+              my abilities.&quot;
               <footer className="text-[#fffff0] mt-2">
                 — Priya K., Full-Stack Developer
               </footer>

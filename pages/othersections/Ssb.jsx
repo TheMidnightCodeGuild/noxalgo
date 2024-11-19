@@ -95,9 +95,9 @@ const Ssb = () => {
           </h2>
           <div className="space-y-6">
             <blockquote className="text-gray-300 italic">
-              "Mission SSB not only prepared me for the selection board but also
-              instilled a sense of discipline and confidence that helped me
-              clear the interview."
+              &quot;Mission SSB not only prepared me for the selection board but
+              also instilled a sense of discipline and confidence that helped me
+              clear the interview.&quot;
               <footer className="text-[#fffff0] mt-2">
                 — Rajat A., Indian Army Officer
               </footer>
