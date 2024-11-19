@@ -237,7 +237,7 @@ const Navbar = () => {
 
               {/* Navigation Links */}
               <Link
-                href="/Aboutus"
+                href="/About"
                 className="text-[#FFFFF0] flex items-center text-[14px] xl:text-[14px] hover:text-red-200 relative after:absolute after:bottom-[-15px] after:left-0 after:h-[4px] after:w-0 after:bg-[#FFFFF0] after:transition-all after:duration-300 hover:after:w-full">
                 About Us
               </Link>
@@ -361,7 +361,7 @@ const Navbar = () => {
 
             {/* Mobile Navigation Links */}
             <Link
-              href="/Aboutus"
+              href="/About"
               className="block py-2 text-gray-100 hover:text-red-200">
               About Us
             </Link>
