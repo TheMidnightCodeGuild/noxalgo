@@ -145,9 +145,9 @@ const Home = () => {
 
   return (
     <>
-      <div className="relative  h-[104vh] sm:h-screen  bg-black  flex items-center justify-center overflow-hidden">
-        <div ref={mountRef} className="absolute  left-0 md:left-[25%]" />
-        <div className="absolute w-full md:w-1/2 px-6 md:px-0 md:left-0 flex items-center justify-center z-10 md:pl-20 mt-40 md:mt-0 ">
+      <div className="relative h-[104vh] sm:h-screen bg-black flex items-center justify-center overflow-hidden">
+        <div ref={mountRef} className="absolute left-0 md:left-[25%]" />
+        <div className="absolute w-full md:w-1/2 px-6 md:px-0 md:left-0 flex items-center justify-center z-10 md:pl-20 mt-40 md:mt-0">
           <div className="flex flex-col items-center md:items-start justify-center h-full my-20 md:my-52">
             <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-normal text-white mb-6 md:mb-8 text-center md:text-left font-[Montserrat]">
               We are
@@ -165,6 +165,14 @@ const Home = () => {
             </p>
           </div>
         </div>
+        <Image
+          src="/images/stamp.png"
+          alt="Stamp"
+          width={150}
+          height={150}
+          className="absolute z-50  right-[20%] top-50 animate-spin"
+          style={{ animation: "spin 10s linear infinite" }}
+        />
       </div>
     </>
   );
