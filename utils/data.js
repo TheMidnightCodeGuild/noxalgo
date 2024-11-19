@@ -21,7 +21,7 @@ export const projects = [
       "Revolutionize your operations with AI and automation. We deliver intelligent solutions that optimize workflows, enhance decision-making, and drive efficiency, empowering your business to stay ahead in a competitive landscape.",
     src: "5.png",
     url: "/services/Ai",
-    color: "#C2491D",
+    color: "#BBACAF",
   },
   {
     title: "UI/UX Design",
@@ -29,7 +29,7 @@ export const projects = [
       "Designing intuitive and engaging user experiences. Our UI/UX solutions blend creativity and functionality to deliver visually appealing, user-centered designs that elevate your brand and enhance customer satisfaction.",
     src: "7.png",
     url: "/services/Ui",
-    color: "#BBACAF",
+    color: "#fffff0",
   },
   {
     title: "No Code Development & Integration",
@@ -37,7 +37,7 @@ export const projects = [
       "Effortlessly build and integrate custom solutions with no-code platforms. We deliver scalable applications, automate workflows, and ensure seamless system integration to accelerate your business growth without extensive coding.",
     src: "10.png",
     url: "/services/Nocode",
-    color: "#fffff0",
+    color: "#BBACAF",
   },
   {
     title: "Ecommerce Development & Consultation",
@@ -45,7 +45,7 @@ export const projects = [
       "Create powerful e-commerce platforms with our development expertise and strategic consultation. We deliver custom online stores, optimize operations, and enhance user experiences to drive sales, customer retention, and business growth",
     src: "20.png",
     url: "/services/Ecommerce",
-    color: "#C2491D",
+    color: "#fffff0",
   },
 ];
 
