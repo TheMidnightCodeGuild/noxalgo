@@ -36,16 +36,16 @@ const Why = () => {
   }, []);
 
   return (
-    <section className="bg-[#101314] min-h-screen pt-10">
+    <section className="bg-[#101314] w-full min-h-screen pt-10 ">
       <div className="max-w-6xl mx-auto px-4 md:px-5 py-8 md:py-16">
         <div className="flex flex-col lg:flex-row lg:gap-12">
           <div className="lg:w-1/2 mx-4 md:ml-8 mb-8 lg:mb-0">
             <h2
               ref={(el) => (cardsRef.current[3] = el)}
-              className="text-2xl md:text-3xl font-bold text-white mb-4">
+              className="text-2xl md:text-[2.5rem] font-bold text-white mb-4">
               Why Noxalgo?
             </h2>
-            <p className="text-neutral-400 text-base mb-6 text-justify">
+            <p className="text-neutral-400 text-lg mb-6 text-justify tracking-tighter">
               We believe in integrity, innovation, constant improvement,
               commitment to customers, teamwork and trust. We provide high-level
               planning and infrastructure consulting through technology
@@ -54,11 +54,11 @@ const Why = () => {
             </p>
             <Link
               href="/About"
-              className="relative inline-flex items-center px-12 py-3 overflow-hidden text-lg font-medium text-indigo-600 border-2 border-indigo-600 rounded-full hover:text-white group hover:bg-gray-50">
-              <span className="absolute left-0 block w-full h-0 transition-all bg-indigo-600 opacity-100 group-hover:h-full top-1/2 group-hover:top-0 duration-400 ease"></span>
-              <span className="absolute right-0 flex items-center justify-start w-10 h-10 duration-300 transform translate-x-full group-hover:translate-x-0 ease">
+              className="relative inline-flex items-center px-6 sm:px-8 md:px-12 py-2 sm:py-3 overflow-hidden text-sm sm:text-base md:text-lg font-medium text-white border-2 border-white rounded-full hover:text-black group hover:bg-white w-full sm:w-auto justify-center">
+              <span className="absolute left-0 block w-full h-0 transition-all bg-white opacity-100 group-hover:h-full top-1/2 group-hover:top-0 duration-400 ease"></span>
+              <span className="absolute right-0 hidden sm:flex items-center justify-start w-8 sm:w-10 h-8 sm:h-10 duration-300 transform translate-x-full group-hover:translate-x-0 ease">
                 <svg
-                  className="w-5 h-5"
+                  className="w-4 sm:w-5 h-4 sm:h-5"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -80,7 +80,7 @@ const Why = () => {
               ref={(el) => (cardsRef.current[0] = el)}
               className="bg-white/10 p-3 md:p-4 border border-[#1E1656] rounded-lg shadow-md">
               <div className="flex flex-col md:flex-row items-center md:items-start gap-3 md:gap-4">
-                <div className="w-full md:w-auto flex-shrink-0">
+                <div className="w-full md:w-auto flex-shrink-0 sm:ml-0 ml-28">
                   <Image
                     src="/images/expert-team.svg"
                     alt="Expert Team"
@@ -107,7 +107,7 @@ const Why = () => {
               ref={(el) => (cardsRef.current[1] = el)}
               className="bg-white/10 p-3 md:p-4 border border-[#1E1656] rounded-lg shadow-md">
               <div className="flex flex-col md:flex-row items-center md:items-start gap-3 md:gap-4">
-                <div className="w-full md:w-auto flex-shrink-0">
+                <div className="w-full md:w-auto flex-shrink-0 sm:ml-0 ml-28">
                   <Image
                     src="/images/delivery.svg"
                     alt="Committed to Delivery"
@@ -134,7 +134,7 @@ const Why = () => {
               ref={(el) => (cardsRef.current[2] = el)}
               className="bg-white/10 p-3 md:p-4 border border-[#1E1656] rounded-lg shadow-md">
               <div className="flex flex-col md:flex-row items-center md:items-start gap-3 md:gap-4">
-                <div className="w-full md:w-auto flex-shrink-0">
+                <div className="w-full md:w-auto flex-shrink-0 sm:ml-0 ml-28">
                   <Image
                     src="/images/agile.svg"
                     alt="Agile Development Process"

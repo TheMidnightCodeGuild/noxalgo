@@ -46,8 +46,21 @@ export default function Index() {
   const [index, setIndex] = useState(0);
   const [dimension, setDimension] = useState({ width: 0, height: 0 });
   const [isComplete, setIsComplete] = useState(false);
+  const [shouldShowLoader, setShouldShowLoader] = useState(true);
 
   useEffect(() => {
+    // Check if this is the first visit ever
+    const hasShownLoader = sessionStorage.getItem("loaderShown");
+
+    if (hasShownLoader) {
+      setShouldShowLoader(false);
+      setIsComplete(true);
+      return;
+    }
+
+    // Mark that loader has been shown
+    sessionStorage.setItem("loaderShown", "true");
+
     document.body.style.overflow = "hidden";
 
     const handleResize = () => {
@@ -67,6 +80,8 @@ export default function Index() {
   }, []);
 
   useEffect(() => {
+    if (!shouldShowLoader) return;
+
     if (index === words.length - 1) {
       const timer = setTimeout(() => {
         setIsComplete(true);
@@ -81,7 +96,7 @@ export default function Index() {
       index === 0 ? 1200 : 200
     );
     return () => clearTimeout(timer);
-  }, [index]);
+  }, [index, shouldShowLoader]);
 
   const initialPath = `M0 0 
     L${dimension.width} 0 
@@ -106,7 +121,7 @@ export default function Index() {
     },
   };
 
-  if (isComplete) {
+  if (isComplete || !shouldShowLoader) {
     return null;
   }
 
@@ -125,17 +140,17 @@ export default function Index() {
             initial="initial"
             animate="enter"
             exit="exit"
-            className="flex items-center text-white text-[52px] font-light tracking-wider absolute z-[1]">
+            className="flex items-center text-white text-[32px] sm:text-[42px] md:text-[52px] font-light tracking-wider absolute z-[1] px-4">
             <motion.span
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
               transition={{ duration: 0.3 }}
-              className="block w-[12px] h-[12px] bg-white rounded-full mr-[15px]"
+              className="block w-[8px] h-[8px] sm:w-[10px] sm:h-[10px] md:w-[12px] md:h-[12px] bg-white rounded-full mr-[10px] sm:mr-[12px] md:mr-[15px]"
             />
             {words[index]}
           </motion.p>
 
-          <svg className="absolute top-0 w-full h-[calc(100%+400px)]">
+          <svg className="absolute top-0 w-full h-[calc(100%+300px)] sm:h-[calc(100%+350px)] md:h-[calc(100%+400px)]">
             <motion.path
               variants={curve}
               initial="initial"

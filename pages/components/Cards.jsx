@@ -2,10 +2,10 @@ import { projects } from "../../utils/data";
 import { useScroll } from "framer-motion";
 import { useEffect, useRef } from "react";
 import Lenis from "@studio-freight/lenis";
-import dynamic from 'next/dynamic';
+import dynamic from "next/dynamic";
 
 // Create a dynamic import for Card with SSR disabled
-const Card = dynamic(() => import('./Card'), { ssr: false });
+const Card = dynamic(() => import("./Card"), { ssr: false });
 
 export default function Cards() {
   const container = useRef(null);
@@ -23,7 +23,7 @@ export default function Cards() {
     }
 
     requestAnimationFrame(raf);
-    
+
     // Cleanup function
     return () => {
       lenis.destroy();
@@ -31,11 +31,15 @@ export default function Cards() {
   }, []); // Add empty dependency array
 
   return (
-    <main ref={container} className="relative mt-[10vh] md:mt-[15vh]">
-      <h1 className="text-center text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold mb-2 md:mb-4 tracking-tight text-transparent bg-gradient-to-r from-gray-900 to-gray-50 bg-clip-text px-4">
-        Our Expertise
-      </h1>
-      <div className="w-full max-w-[1400px] mx-auto px-4 md:px-6 lg:px-8">
+    <main ref={container} className="relative mt-[15vh] md:mt-[15vh]">
+      <div className="px-4 md:px-52">
+        <div className="w-[100px] md:w-[150px] h-[3px] bg-[#fffff0] mb-3 md:mb-5"></div>
+        <h2 className="text-3xl md:text-5xl uppercase font-semibold bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
+          Our Expertise
+        </h2>
+      </div>
+
+      <div className="w-full max-w-[1400px] mx-auto px-2 sm:px-4 md:px-6 lg:px-8 ">
         {projects.map((project, i) => {
           const targetScale = 1 - (projects.length - i) * 0.01;
           return (
