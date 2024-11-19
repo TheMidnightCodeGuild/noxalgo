@@ -165,14 +165,14 @@ const Home = () => {
             </p>
           </div>
         </div>
-        <Image
+        {/* <Image
           src="/images/stamp.png"
           alt="Stamp"
           width={150}
           height={150}
           className="absolute z-50  right-[20%] top-50 animate-spin"
           style={{ animation: "spin 10s linear infinite" }}
-        />
+        /> */}
       </div>
     </>
   );

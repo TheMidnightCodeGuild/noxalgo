@@ -241,11 +241,11 @@ const Navbar = () => {
                 className="text-[#FFFFF0] flex items-center text-[14px] xl:text-[14px] hover:text-red-200 relative after:absolute after:bottom-[-15px] after:left-0 after:h-[4px] after:w-0 after:bg-[#FFFFF0] after:transition-all after:duration-300 hover:after:w-full">
                 About Us
               </Link>
-              {/* <Link
+              <Link
                 href="/Careers"
                 className="text-[#FFFFF0] flex items-center text-[14px] xl:text-[14px] hover:text-red-200 relative after:absolute after:bottom-[-15px] after:left-0 after:h-[4px] after:w-0 after:bg-[#FFFFF0] after:transition-all after:duration-300 hover:after:w-full">
                 Careers
-              </Link> */}
+              </Link>
               <Link
                 href="/Insights"
                 className="text-[#FFFFF0] flex items-center text-[14px] xl:text-[14px] hover:text-red-200 relative after:absolute after:bottom-[-15px] after:left-0 after:h-[4px] after:w-0 after:bg-[#FFFFF0] after:transition-all after:duration-300 hover:after:w-full">
