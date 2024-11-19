@@ -78,7 +78,7 @@ const Why = () => {
             {/* Expert Team Card */}
             <div
               ref={(el) => (cardsRef.current[0] = el)}
-              className="bg-white/10 p-3 md:p-4 border border-[#1E1656] rounded-lg shadow-md">
+              className="bg-white/10 p-3 md:p-4 border border-[#fffff0] rounded-lg shadow-md">
               <div className="flex flex-col md:flex-row items-center md:items-start gap-3 md:gap-4">
                 <div className="w-full md:w-auto flex-shrink-0 sm:ml-0 ml-28">
                   <Image
@@ -105,7 +105,7 @@ const Why = () => {
             {/* Committed to Delivery Card */}
             <div
               ref={(el) => (cardsRef.current[1] = el)}
-              className="bg-white/10 p-3 md:p-4 border border-[#1E1656] rounded-lg shadow-md">
+              className="bg-white/10 p-3 md:p-4 border border-[#fffff0] rounded-lg shadow-md">
               <div className="flex flex-col md:flex-row items-center md:items-start gap-3 md:gap-4">
                 <div className="w-full md:w-auto flex-shrink-0 sm:ml-0 ml-28">
                   <Image
@@ -132,7 +132,7 @@ const Why = () => {
             {/* 24-hour Assistance Card */}
             <div
               ref={(el) => (cardsRef.current[2] = el)}
-              className="bg-white/10 p-3 md:p-4 border border-[#1E1656] rounded-lg shadow-md">
+              className="bg-white/10 p-3 md:p-4 border border-[#fffff0] rounded-lg shadow-md">
               <div className="flex flex-col md:flex-row items-center md:items-start gap-3 md:gap-4">
                 <div className="w-full md:w-auto flex-shrink-0 sm:ml-0 ml-28">
                   <Image
