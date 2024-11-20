@@ -30,7 +30,7 @@ const Industries = () => {
           </Link>
           <Link href="https://socialdevs.in">
             <div
-              className="flex flex-col py-8 sm:py-12 md:py-16 lg:py-24 relative group/feature border border-neutral-700 sm:border-none sm:lg:border-r sm:lg:border-l sm:lg:border-b rounded-2xl sm:rounded-3xl"
+              className="flex flex-col py-8 sm:py-12 md:py-16 lg:py-28 relative group/feature border border-neutral-700 sm:border-none sm:lg:border-r sm:lg:border-l sm:lg:border-b rounded-2xl sm:rounded-3xl"
               style={{
                 backgroundImage: "url('/images/1.jpg')",
                 backgroundSize: "cover",
@@ -49,7 +49,7 @@ const Industries = () => {
 
           <Link href="/othersections/Hackathon">
             <div
-              className="flex flex-col py-8 sm:py-12 md:py-16 lg:py-24 relative group/feature border border-neutral-700 sm:border-none sm:lg:border-r sm:lg:border-l sm:lg:border-b rounded-2xl sm:rounded-3xl"
+              className="flex flex-col py-8 sm:py-12 md:py-16 lg:py-28 relative group/feature border border-neutral-700 sm:border-none sm:lg:border-r sm:lg:border-l sm:lg:border-b rounded-2xl sm:rounded-3xl"
               style={{
                 backgroundImage: "url('/images/4.jpg')",
                 backgroundSize: "cover",
@@ -106,7 +106,7 @@ const Industries = () => {
 
           <Link href="/othersections/Ssb">
             <div
-              className="flex flex-col py-8 sm:py-12 md:py-16 lg:py-24 relative group/feature border border-neutral-700 sm:border-none sm:lg:border-r sm:lg:border-l sm:lg:border-b rounded-2xl sm:rounded-3xl"
+              className="flex flex-col py-8 sm:py-12 md:py-16 lg:py-28 relative group/feature border border-neutral-700 sm:border-none sm:lg:border-r sm:lg:border-l sm:lg:border-b rounded-2xl sm:rounded-3xl"
               style={{
                 backgroundImage: "url('/images/5.jpg')",
                 backgroundSize: "cover",
