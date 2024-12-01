@@ -11,7 +11,7 @@ const Career = () => {
         "We are seeking a dynamic Business Development Executive to drive growth and expand our market presence. The ideal candidate will identify new business opportunities, develop relationships with potential clients, and contribute to our overall business strategy.",
       requirements: [
         "3+ years of B2B sales or business development experience",
-        "Strong networking and relationship building skills",
+        "Strong networking and relationship building skills", 
         "Excellent communication and presentation abilities",
         "Experience in the technology/software industry preferred",
       ],
@@ -28,7 +28,7 @@ const Career = () => {
       ],
     },
     {
-      title: "SEO Executive & Content Creator",
+      title: "SEO Executive & Content Creator", 
       description:
         "Seeking a creative SEO Executive & Content Creator to enhance our digital presence. Will be responsible for developing SEO strategies, creating engaging content, and improving our search rankings.",
       requirements: [
@@ -50,6 +50,29 @@ const Career = () => {
       ],
     },
   ];
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+
+    try {
+      const response = await fetch('/api/careers', {
+        method: 'POST',
+        body: formData,
+      });
+
+      if (response.ok) {
+        alert('Application submitted successfully!');
+        e.target.reset(); // Reset form after successful submission
+      } else {
+        const error = await response.json();
+        alert(`Failed to submit application: ${error.message}`);
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      alert('An error occurred while submitting the application');
+    }
+  };
 
   return (
     <>
@@ -100,13 +123,15 @@ const Career = () => {
             <h2 className="text-2xl font-bold mb-6 text-[#fffff0]">
               Apply Now
             </h2>
-            <form className="space-y-4">
+            <form className="space-y-4" onSubmit={handleSubmit}>
               <div>
                 <label className="block text-sm font-medium text-gray-300 mb-1">
                   Full Name
                 </label>
                 <input
                   type="text"
+                  name="name"
+                  required
                   className="w-full bg-neutral-800 rounded-lg px-4 py-2 text-white"
                 />
               </div>
@@ -116,6 +141,8 @@ const Career = () => {
                 </label>
                 <input
                   type="email"
+                  name="email"
+                  required
                   className="w-full bg-neutral-800 rounded-lg px-4 py-2 text-white"
                 />
               </div>
@@ -123,7 +150,10 @@ const Career = () => {
                 <label className="block text-sm font-medium text-gray-300 mb-1">
                   Position
                 </label>
-                <select className="w-full bg-neutral-800 rounded-lg px-4 py-2 text-white">
+                <select 
+                  name="position"
+                  required
+                  className="w-full bg-neutral-800 rounded-lg px-4 py-2 text-white">
                   <option value="">Select a position</option>
                   {positions.map((position, index) => (
                     <option key={index} value={position.title}>
@@ -136,16 +166,22 @@ const Career = () => {
                 <label className="block text-sm font-medium text-gray-300 mb-1">
                   Cover Letter
                 </label>
-                <textarea className="w-full bg-neutral-800 rounded-lg px-4 py-2 text-white h-32"></textarea>
+                <textarea 
+                  name="coverLetter"
+                  required
+                  className="w-full bg-neutral-800 rounded-lg px-4 py-2 text-white h-32"></textarea>
               </div>
               <div>
                 <label className="block text-sm font-medium text-gray-300 mb-1">
                   Resume/CV
                 </label>
                 <input
-                  type="file"
-                  className="w-full bg-neutral-800 rounded-lg px-4 py-2 text-white"
-                />
+     type="file"
+     name="resume"
+     required
+     accept=".pdf,.doc,.docx"
+     className="w-full bg-neutral-800 rounded-lg px-4 py-2 text-white"
+   />
               </div>
               <button
                 type="submit"
