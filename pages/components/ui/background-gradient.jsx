@@ -34,9 +34,7 @@ const BackgroundGradient = ({
         style={{
           backgroundSize: animate ? "400% 400%" : undefined,
         }}
-        className={cn(
-          "absolute inset-0 rounded-lg bg-gradient-to-r from-violet-500 via-purple-500 to-blue-500 opacity-100 blur-xl transition duration-1000 group-hover:opacity-70"
-        )}
+        className={cn("")}
       />
       <motion.div
         variants={animate ? variants : undefined}
@@ -54,9 +52,7 @@ const BackgroundGradient = ({
         style={{
           backgroundSize: animate ? "400% 400%" : undefined,
         }}
-        className={cn(
-          "absolute inset-0 rounded-lg bg-gradient-to-r from-violet-500 via-purple-500 to-blue-500 opacity-100 transition duration-1000 group-hover:opacity-70"
-        )}
+        className={cn("")}
       />
       <div className={cn("relative z-10", className)}>{children}</div>
     </div>
