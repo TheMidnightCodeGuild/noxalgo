@@ -10,6 +10,8 @@ const Contact = () => {
     subject: "",
     message: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null);
 
   const handleChange = (e) => {
     setFormData({
@@ -20,31 +22,35 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
     try {
-      const response = await fetch('/api/enquiry', {
-        method: 'POST',
+      const response = await fetch("/api/enquiry", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
       });
 
       if (!response.ok) {
-        throw new Error('Failed to submit enquiry');
+        throw new Error("Failed to submit enquiry");
       }
 
       // Clear form after successful submission
       setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: ''
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
       });
-
-      alert('Thank you for your enquiry! We will get back to you soon.');
+      setSubmitStatus("success");
     } catch (error) {
-      console.error('Error submitting form:', error);
-      alert('There was an error submitting your enquiry. Please try again.');
+      console.error("Error submitting form:", error);
+      setSubmitStatus("error");
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -242,12 +248,46 @@ const Contact = () => {
                 className="w-full px-4 py-2 bg-zinc-900 border border-[#32456C] rounded-lg focus:border-[#fffff0] focus:outline-none text-white"
                 required></textarea>
             </div>
-            <div>
+            <div className="flex items-center space-x-4">
               <button
                 type="submit"
-                className="px-8 py-3 bg-gradient-to-r from-zinc-800 to-zinc-700 text-white rounded-lg hover:from-zinc-700 hover:to-zinc-600 transition-all duration-300">
-                Send Message
+                disabled={isSubmitting}
+                className="px-8 py-3 bg-gradient-to-r from-zinc-800 to-zinc-700 text-white rounded-lg hover:from-zinc-700 hover:to-zinc-600 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center">
+                {isSubmitting ? (
+                  <>
+                    <svg
+                      className="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24">
+                      <circle
+                        className="opacity-25"
+                        cx="12"
+                        cy="12"
+                        r="10"
+                        stroke="currentColor"
+                        strokeWidth="4"></circle>
+                      <path
+                        className="opacity-75"
+                        fill="currentColor"
+                        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                    Sending...
+                  </>
+                ) : (
+                  "Send Message"
+                )}
               </button>
+              {submitStatus === "success" && (
+                <span className="text-green-500">
+                  Message sent successfully!
+                </span>
+              )}
+              {submitStatus === "error" && (
+                <span className="text-red-500">
+                  Failed to send message. Please try again.
+                </span>
+              )}
             </div>
           </form>
         </div>

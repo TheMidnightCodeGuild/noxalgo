@@ -370,6 +370,11 @@ const Navbar = () => {
               className="block py-2 text-gray-100 hover:text-red-200">
               Insights
             </Link>
+            <Link
+              href="/Careers"
+              className="block py-2 text-gray-100 hover:text-red-200">
+              Careers
+            </Link>
 
             {/* Mobile CTA Button */}
             <div className="pt-4">
