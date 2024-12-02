@@ -12,12 +12,20 @@ export const config = {
 };
 
 export default async function handler(req, res) {
-  // if (req.method !== "POST") {
-  //   return res.status(405).json({ error: "Method Not Allowed" });
-  // }
+  if (req.method !== "POST") {
+    return res.status(405).json({ error: "Method Not Allowed" });
+  }
 
   try {
     await connectToDatabase();
+
+    // Add a timeout to the database operations
+    await Promise.race([
+      new Promise((_, reject) =>
+        setTimeout(() => reject(new Error('Database connection timeout')), 10000)
+      ),
+      // Your existing database operations
+    ]);
 
     // Ensure uploads directory exists
     const uploadDir = path.join(process.cwd(), "public", "uploads");
@@ -84,6 +92,9 @@ export default async function handler(req, res) {
         user: process.env.EMAIL_USERNAME,
         pass: process.env.EMAIL_PASSWORD,
       },
+      connectionTimeout: 5000,
+      greetingTimeout: 5000,
+      socketTimeout: 5000,
     });
 
     const mailOptions = {
