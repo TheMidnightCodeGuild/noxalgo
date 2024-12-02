@@ -5,16 +5,16 @@ import formidable from "formidable";
 import { promises as fs } from "fs";
 import path from "path";
 
-// export const config = {
-//   api: {
-//     bodyParser: false,
-//   },
-// };
+export const config = {
+  api: {
+    bodyParser: false,
+  },
+};
 
 export default async function handler(req, res) {
-  if (req.method !== "POST") {
-    return res.status(405).json({ error: "Method Not Allowed" });
-  }
+  // if (req.method !== "POST") {
+  //   return res.status(405).json({ error: "Method Not Allowed" });
+  // }
 
   try {
     await connectToDatabase();
