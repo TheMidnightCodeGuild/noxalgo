@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
-const Career = () => {
+const Careers = () => {
   const [selectedPosition, setSelectedPosition] = useState(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showMessage, setShowMessage] = useState(false);
@@ -14,7 +15,7 @@ const Career = () => {
         "We are seeking a dynamic Business Development Executive to drive growth and expand our market presence. The ideal candidate will identify new business opportunities, develop relationships with potential clients, and contribute to our overall business strategy.",
       requirements: [
         "3+ years of B2B sales or business development experience",
-        "Strong networking and relationship building skills",
+        "Strong networking and relationship building skills", 
         "Excellent communication and presentation abilities",
         "Experience in the technology/software industry preferred",
       ],
@@ -31,7 +32,7 @@ const Career = () => {
       ],
     },
     {
-      title: "SEO Executive & Content Creator",
+      title: "SEO Executive & Content Creator", 
       description:
         "Seeking a creative SEO Executive & Content Creator to enhance our digital presence. Will be responsible for developing SEO strategies, creating engaging content, and improving our search rankings.",
       requirements: [
@@ -48,7 +49,7 @@ const Career = () => {
       requirements: [
         "2+ years of sales experience",
         "Strong negotiation and closing skills",
-        "Experience with CRM systems",
+        "Experience with CRM systems", 
         "Target-driven mindset with proven track record",
       ],
     },
@@ -65,25 +66,22 @@ const Career = () => {
         body: formData,
       });
 
-      const data = await response.json();
-
-      if (response.ok) {
-        setMessage({
-          type: "success",
-          text: "Application submitted successfully!",
-        });
-        e.target.reset();
-      } else {
-        setMessage({
-          type: "error",
-          text: data.error || "Failed to submit application",
-        });
+      if (!response.ok) {
+        const data = await response.json();
+        throw new Error(data.error || "Failed to submit application");
       }
+
+      setMessage({
+        type: "success",
+        text: "Application submitted successfully!",
+      });
+      e.target.reset();
+
     } catch (error) {
       console.error("Error:", error);
       setMessage({
         type: "error",
-        text: "Server timeout or connection error. Please try again.",
+        text: error.message || "Server timeout or connection error. Please try again.",
       });
     } finally {
       setIsSubmitting(false);
@@ -100,7 +98,7 @@ const Career = () => {
           <div
             className={`fixed top-5 right-5 p-4 rounded-lg shadow-lg ${
               message.type === "success" ? "bg-green-500" : "bg-red-500"
-            } text-white transition-opacity duration-500`}>
+            } text-white transition-opacity duration-500 z-50`}>
             {message.text}
           </div>
         )}
@@ -183,7 +181,7 @@ const Career = () => {
                   type="text"
                   name="name"
                   required
-                  className="w-full bg-neutral-800 rounded-lg px-4 py-2 text-white"
+                  className="w-full bg-neutral-800 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-[#fffff0]"
                 />
               </div>
               <div>
@@ -194,7 +192,7 @@ const Career = () => {
                   type="email"
                   name="email"
                   required
-                  className="w-full bg-neutral-800 rounded-lg px-4 py-2 text-white"
+                  className="w-full bg-neutral-800 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-[#fffff0]"
                 />
               </div>
               <div>
@@ -204,7 +202,7 @@ const Career = () => {
                 <select
                   name="position"
                   required
-                  className="w-full bg-neutral-800 rounded-lg px-4 py-2 text-white">
+                  className="w-full bg-neutral-800 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-[#fffff0]">
                   <option value="">Select a position</option>
                   {positions.map((position, index) => (
                     <option key={index} value={position.title}>
@@ -220,7 +218,8 @@ const Career = () => {
                 <textarea
                   name="coverLetter"
                   required
-                  className="w-full bg-neutral-800 rounded-lg px-4 py-2 text-white h-32"></textarea>
+                  className="w-full bg-neutral-800 rounded-lg px-4 py-2 text-white h-32 focus:outline-none focus:ring-2 focus:ring-[#fffff0]"
+                  placeholder="Tell us why you'd be a great fit..."></textarea>
               </div>
               <div>
                 <label className="block text-sm font-medium text-gray-300 mb-1">
@@ -231,8 +230,9 @@ const Career = () => {
                   name="resume"
                   required
                   accept=".pdf,.doc,.docx"
-                  className="w-full bg-neutral-800 rounded-lg px-4 py-2 text-white"
+                  className="w-full bg-neutral-800 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-[#fffff0]"
                 />
+                <p className="text-xs text-gray-400 mt-1">Accepted formats: PDF, DOC, DOCX (Max 10MB)</p>
               </div>
               <button
                 type="submit"
@@ -255,8 +255,9 @@ const Career = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };
 
-export default Career;
+export default Careers;
