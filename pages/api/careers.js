@@ -1,6 +1,4 @@
 import nodemailer from "nodemailer";
-import connectToDatabase from "@/lib/mongoose";
-import Career from "@/models/Career";
 import formidable from "formidable";
 import { promises as fs } from "fs";
 import path from "path";
@@ -17,14 +15,6 @@ export default async function handler(req, res) {
   }
 
   try {
-    // Set a longer timeout for database connection
-    await Promise.race([
-      connectToDatabase(),
-      new Promise((_, reject) =>
-        setTimeout(() => reject(new Error('Database connection timeout')), 30000)
-      ),
-    ]);
-
     // Ensure uploads directory exists
     const uploadDir = path.join(process.cwd(), "public", "uploads");
     try {
@@ -76,16 +66,6 @@ export default async function handler(req, res) {
     const resumeFile = Array.isArray(files.resume) ? files.resume[0] : files.resume;
     const resumePath = resumeFile.filepath;
 
-    // Save to database
-    const newCareer = new Career({
-      name,
-      email, 
-      position,
-      coverLetter,
-      resume: path.basename(resumePath) // Only store filename
-    });
-    await newCareer.save();
-
     // Set up email notification
     const transporter = nodemailer.createTransport({
       host: "smtp.gmail.com",
@@ -102,7 +82,7 @@ export default async function handler(req, res) {
 
     const mailOptions = {
       from: process.env.EMAIL_USERNAME,
-      to: "business@noxalgo.com", 
+      to: "business@noxalgo.com",
       subject: `New Career Application from ${name}!`,
       text: `You have received a new career application.\n\nName: ${name}\nEmail: ${email}\nPosition: ${position}\nCover Letter: ${coverLetter}`,
       attachments: [{
@@ -113,7 +93,14 @@ export default async function handler(req, res) {
 
     await transporter.sendMail(mailOptions);
 
-    res.status(201).json({ message: 'Application submitted successfully!' });
+    // Clean up uploaded file after sending email
+    try {
+      await fs.unlink(resumePath);
+    } catch (unlinkError) {
+      console.error("Error deleting file:", unlinkError);
+    }
+
+    res.status(200).json({ message: 'Application submitted successfully!' });
 
   } catch (error) {
     console.error("Error:", error);
