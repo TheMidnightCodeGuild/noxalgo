@@ -17,14 +17,12 @@ export default async function handler(req, res) {
   }
 
   try {
-    await connectToDatabase();
-
-    // Add a timeout to the database operations
+    // Set a longer timeout for database connection
     await Promise.race([
+      connectToDatabase(),
       new Promise((_, reject) =>
-        setTimeout(() => reject(new Error('Database connection timeout')), 10000)
+        setTimeout(() => reject(new Error('Database connection timeout')), 30000)
       ),
-      // Your existing database operations
     ]);
 
     // Ensure uploads directory exists
@@ -40,17 +38,22 @@ export default async function handler(req, res) {
       keepExtensions: true,
       maxFileSize: 10 * 1024 * 1024, // 10MB limit
       filter: function({name, originalFilename, mimetype}) {
-        // Only allow pdf, doc, docx files
         return mimetype && ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'].includes(mimetype);
       }
     });
 
-    const [fields, files] = await new Promise((resolve, reject) => {
-      form.parse(req, (err, fields, files) => {
-        if (err) reject(err);
-        resolve([fields, files]);
-      });
-    });
+    // Add timeout to form parsing
+    const [fields, files] = await Promise.race([
+      new Promise((resolve, reject) => {
+        form.parse(req, (err, fields, files) => {
+          if (err) reject(err);
+          resolve([fields, files]);
+        });
+      }),
+      new Promise((_, reject) =>
+        setTimeout(() => reject(new Error('Form parsing timeout')), 15000)
+      )
+    ]);
 
     // Validate required fields
     const requiredFields = ['name', 'email', 'position', 'coverLetter'];
@@ -115,9 +118,7 @@ export default async function handler(req, res) {
   } catch (error) {
     console.error("Error:", error);
     console.error("Stack Trace:", error.stack);
-    // Log additional details
-    console.error("Request Body:", req.body);
-    console.error("Request Headers:", req.headers);
+
     // Clean up any uploaded files in case of error
     if (error.filepath) {
       try {
@@ -126,6 +127,15 @@ export default async function handler(req, res) {
         console.error("Error deleting file:", unlinkError);
       }
     }
-    res.status(500).json({ error: "Server error", details: error.message });
+
+    // Send appropriate error response
+    if (error.message.includes('timeout')) {
+      return res.status(504).json({ error: "Request timed out. Please try again." });
+    }
+    
+    return res.status(500).json({ 
+      error: "Server error occurred",
+      details: error.message 
+    });
   }
 }

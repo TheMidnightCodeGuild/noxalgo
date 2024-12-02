@@ -65,29 +65,30 @@ const Career = () => {
         body: formData,
       });
 
+      const data = await response.json();
+
       if (response.ok) {
         setMessage({
           type: "success",
           text: "Application submitted successfully!",
         });
-        e.target.reset(); // Reset form after successful submission
+        e.target.reset();
       } else {
-        const error = await response.json();
         setMessage({
           type: "error",
-          text: `Failed to submit application: ${error.message}`,
+          text: data.error || "Failed to submit application",
         });
       }
     } catch (error) {
       console.error("Error:", error);
       setMessage({
         type: "error",
-        text: "An error occurred while submitting the application",
+        text: "Server timeout or connection error. Please try again.",
       });
     } finally {
       setIsSubmitting(false);
       setShowMessage(true);
-      setTimeout(() => setShowMessage(false), 5000); // Hide message after 5 seconds
+      setTimeout(() => setShowMessage(false), 5000);
     }
   };
 
