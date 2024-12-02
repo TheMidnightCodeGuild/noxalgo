@@ -103,6 +103,7 @@ export default async function handler(req, res) {
 
   } catch (error) {
     console.error("Error:", error);
+    console.error("Stack Trace:", error.stack);
     // Clean up any uploaded files in case of error
     if (error.filepath) {
       try {
