@@ -5,11 +5,11 @@ import formidable from "formidable";
 import { promises as fs } from "fs";
 import path from "path";
 
-export const config = {
-  api: {
-    bodyParser: false,
-  },
-};
+// export const config = {
+//   api: {
+//     bodyParser: false,
+//   },
+// };
 
 export default async function handler(req, res) {
   if (req.method !== "POST") {
